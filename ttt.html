@@ -1,0 +1,643 @@
+<!-- <!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Запись ребенка</title>
+    <link rel="stylesheet" href="ttt.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Запись ребенка в школу / детский сад</h1>
+    <p>Заполните форму для подачи заявления</p>
+</header>
+
+<main>
+    <form>
+
+        <span class="badge">ЗАЯВЛЕНИЕ</span>
+
+        <h2>Данные ребенка</h2>
+
+        <label for="parent">Имя родителя:</label>
+        <input
+            type="text"
+            id="parent"
+            name="parent"
+            placeholder="Введите имя родителя"
+            required
+        >
+
+        <label for="child">ФИО ребенка:</label>
+        <input
+            type="text"
+            id="child"
+            name="child"
+            placeholder="Введите ФИО ребенка"
+            required
+        >
+
+        <label for="birth">Дата рождения ребенка:</label>
+        <input
+            type="date"
+            id="birth"
+            name="birth"
+            required
+        >
+
+        <label for="group">Класс / группа:</label>
+        <select id="group" name="group" required>
+            <option value="">Выберите класс или группу</option>
+            <option>1 класс</option>
+            <option>2 класс</option>
+            <option>3 класс</option>
+            <option>4 класс</option>
+            <option>5 класс</option>
+            <option>Подготовительная группа</option>
+            <option>Старшая группа</option>
+            <option>Средняя группа</option>
+        </select>
+
+        <label for="document">Файл свидетельства о рождении:</label>
+        <input
+            type="file"
+            id="document"
+            name="document"
+            accept=".pdf,.jpg,.jpeg,.png"
+            required
+        >
+
+        <button type="submit" href="">Подать заявление</button>
+
+    </form>
+</main>
+
+<footer>
+    <p>© 2026 Запись ребенка</p>
+</footer>
+
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>Запись ребенка</title>
+
+<style>
+    /* =========================
+       ОСНОВНЫЕ СТИЛИ
+    ========================= */
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background: #f3f7ff;
+        color: #333;
+    }
+
+    /* =========================
+       НАВИГАЦИЯ
+    ========================= */
+
+    nav {
+        background: #2563eb;
+        padding: 15px 8%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .logo {
+        color: white;
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+    nav ul {
+        display: flex;
+        list-style: none;
+        gap: 25px;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    nav a:hover {
+        color: #bfdbfe;
+    }
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    header {
+        text-align: center;
+        color: white;
+        padding: 90px 20px;
+        background: linear-gradient(
+            135deg,
+            #2563eb,
+            #60a5fa
+        );
+    }
+
+    header h1 {
+        font-size: 42px;
+        margin-bottom: 15px;
+    }
+
+    header p {
+        font-size: 20px;
+    }
+
+    .header-btn {
+        display: inline-block;
+        margin-top: 30px;
+        padding: 14px 30px;
+        background: white;
+        color: #2563eb;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .header-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    /* =========================
+       СЕКЦИИ
+    ========================= */
+
+    section {
+        max-width: 1100px;
+        margin: auto;
+        padding: 70px 20px;
+    }
+
+    section h2 {
+        text-align: center;
+        color: #1e40af;
+        font-size: 32px;
+        margin-bottom: 25px;
+    }
+
+    /* =========================
+       О НАС
+    ========================= */
+
+    .about {
+        text-align: center;
+    }
+
+    .about-text {
+        max-width: 800px;
+        margin: auto;
+        font-size: 18px;
+        line-height: 1.7;
+        color: #555;
+    }
+
+    /* =========================
+       КАРТОЧКИ
+    ========================= */
+
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+        margin-top: 40px;
+    }
+
+    .card {
+        background: white;
+        padding: 30px 20px;
+        border-radius: 15px;
+        text-align: center;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        transition: 0.3s;
+    }
+
+    .card:hover {
+        transform: translateY(-7px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .card-icon {
+        font-size: 45px;
+        margin-bottom: 15px;
+    }
+
+    .card h3 {
+        color: #2563eb;
+        margin-bottom: 10px;
+    }
+
+    .card p {
+        color: #666;
+        line-height: 1.5;
+    }
+
+    /* =========================
+       ФОРМА
+    ========================= */
+
+    #application {
+        max-width: none;
+        background: #eaf2ff;
+    }
+
+    form {
+        max-width: 650px;
+        margin: auto;
+        background: white;
+        padding: 35px;
+        border-radius: 18px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .badge {
+        display: block;
+        width: fit-content;
+        margin: 0 auto 20px;
+        padding: 7px 15px;
+        border-radius: 20px;
+        background: #dbeafe;
+        color: #2563eb;
+        font-size: 13px;
+        font-weight: bold;
+    }
+
+    form h2 {
+        margin-bottom: 25px;
+    }
+
+    label {
+        display: block;
+        margin-top: 18px;
+        margin-bottom: 7px;
+        font-weight: bold;
+    }
+
+    input,
+    select {
+        width: 100%;
+        padding: 13px;
+        border: 1px solid #d1d5db;
+        border-radius: 8px;
+        font-size: 15px;
+        outline: none;
+        transition: 0.3s;
+    }
+
+    input:focus,
+    select:focus {
+        border-color: #2563eb;
+        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+    }
+
+    button {
+        width: 100%;
+        margin-top: 25px;
+        padding: 14px;
+        border: none;
+        border-radius: 9px;
+        background: #2563eb;
+        color: white;
+        font-size: 17px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    button:hover {
+        background: #1d4ed8;
+        transform: translateY(-2px);
+    }
+    #successMessage {
+        display: none;
+        max-width: 650px;
+        margin: 20px auto 0;
+        padding: 18px;
+        border-radius: 10px;
+        background: #dcfce7;
+        color: #166534;
+        text-align: center;
+        font-weight: bold;
+    }
+    .contact-box {
+        max-width: 700px;
+        margin: auto;
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        text-align: center;
+    }
+    .contact-box p {
+        margin: 12px 0;
+        font-size: 17px;
+    }
+    footer {
+        background: #172554;
+        color: white;
+        text-align: center;
+        padding: 25px;
+    }
+    @media (max-width: 768px) {
+        nav {
+            flex-direction: column;
+            gap: 15px;
+        }
+        nav ul {
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        header h1 {
+            font-size: 30px;
+        }
+        header p {
+            font-size: 17px;
+        }
+        .cards {
+            grid-template-columns: 1fr;
+        }
+        form {
+            padding: 25px 20px;
+        }
+    }
+</style>
+</head>
+<body>
+<nav>
+    <div class="logo">
+        🎓 Наше образование
+    </div>
+    <ul>
+        <li>
+            <a href="#about">О нас</a>
+        </li>
+        <li>
+            <a href="#advantages">Преимущества</a>
+        </li>
+        <li>
+            <a href="#application">Запись</a>
+        </li>
+        <li>
+            <a href="#contacts">Контакты</a>
+        </li>
+    </ul>
+</nav>
+<header>
+    <h1>
+        Запись ребенка в школу / детский сад
+    </h1>
+    <p>
+        Быстро, удобно и без очередей
+    </p>
+    <a href="#application" class="header-btn">
+        Подать заявление
+    </a>
+</header>
+<section id="about" class="about">
+    <h2>
+        О нас
+    </h2>
+    <div class="about-text">
+        <p>
+            Добро пожаловать на сайт записи детей
+            в школу и детский сад!
+        </p>
+        <br>
+        <p>
+            Мы помогаем родителям быстро и удобно
+            оформить заявление на обучение ребенка.
+            Наша цель — сделать процесс записи
+            простым, понятным и доступным для каждой семьи.
+        </p>
+    </div>
+</section>
+<section id="advantages">
+    <h2>
+        Почему выбирают нас?
+    </h2>
+    <div class="cards">
+        <div class="card">
+            <div class="card-icon">
+                🎓
+            </div>
+            <h3>
+                Качественное образование
+            </h3>
+            <p>
+                Создаем комфортные условия для
+                обучения и развития детей.
+            </p>
+        </div>
+        <div class="card">
+            <div class="card-icon">
+                👨‍👩‍👧
+            </div>
+            <h3>
+                Удобно для родителей
+            </h3>
+            <p>
+                Онлайн-запись помогает сэкономить
+                время и избежать очередей.
+            </p>
+        </div>
+        <div class="card">
+            <div class="card-icon">
+                ❤️
+            </div>
+            <h3>
+                Забота о детях
+            </h3>
+            <p>
+                Мы стремимся создать безопасную
+                и дружелюбную атмосферу.
+            </p>
+        </div>
+    </div>
+</section>
+<section id="application">
+    <form id="applicationForm">
+        <span class="badge">
+            ЗАЯВЛЕНИЕ
+        </span>
+        <h2>
+            Данные ребенка
+        </h2>
+        <label for="parent">
+            Имя родителя:
+        </label>
+        <input
+            type="text"
+            id="parent"
+            name="parent"
+            placeholder="Введите имя родителя"
+            required
+        >
+        <label for="child">
+            ФИО ребенка:
+        </label>
+        <input
+            type="text"
+            id="child"
+            name="child"
+            placeholder="Введите ФИО ребенка"
+            required
+        >
+        <label for="birth">
+            Дата рождения ребенка:
+        </label>
+        <input
+            type="date"
+            id="birth"
+            name="birth"
+            required
+        >
+        <label for="group">
+            Класс / группа:
+        </label>
+        <select
+            id="group"
+            name="group"
+            required
+        >
+            <option value="">
+                Выберите класс или группу
+            </option>
+            <option value="1 класс">
+                1 класс
+            </option>
+            <option value="2 класс">
+                2 класс
+            </option>
+            <option value="3 класс">
+                3 класс
+            </option>
+            <option value="4 класс">
+                4 класс
+            </option>
+            <option value="5 класс">
+                5 класс
+            </option>
+            <option value="Подготовительная группа">
+                Подготовительная группа
+            </option>
+            <option value="Старшая группа">
+                Старшая группа
+            </option>
+            <option value="Средняя группа">
+                Средняя группа
+            </option>
+        </select>
+        <label for="document">
+            Файл свидетельства о рождении:
+        </label>
+        <input
+            type="file"
+            id="document"
+            name="document"
+            accept=".pdf,.jpg,.jpeg,.png"
+            required
+        >
+        <button type="submit">
+            Подать заявление
+        </button>
+    </form>
+    <div id="successMessage">
+        ✅ Заявление успешно принято!
+        Мы свяжемся с вами в ближайшее время.
+    </div>
+</section>
+<section id="contacts">
+    <h2>
+        Наши контакты
+    </h2>
+    <div class="contact-box">
+        <p>
+            📍 <strong>Адрес:</strong>
+            г. Ош, Кыргызстан
+        </p>
+        <p>
+            📞 <strong>Телефон:</strong>
+            +996 225 222 828
+        </p>
+        <p>
+            ✉️ <strong>Email:</strong>
+            you@gmail.com
+        </p>
+        <p>
+            🕐 <strong>Время работы:</strong>
+            Пн–Пт, 08:00–18:00
+        </p>
+    </div>
+</section>
+<footer>
+    <p>
+        © 2026 Наше образование.
+        Все права защищены.
+    </p>
+</footer>
+<script>
+    const form = document.getElementById("applicationForm");
+    const successMessage =
+        document.getElementById("successMessage"); 
+    form.addEventListener("submit", function(event) {
+        event.preventDefault();
+        successMessage.style.display = "block";
+        successMessage.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+        form.reset();
+        setTimeout(function() {
+            successMessage.style.display = "none";
+        }, 5000);
+    });
+    const menuLinks = document.querySelectorAll("nav a");
+    menuLinks.forEach(function(link) {
+        link.addEventListener("click", function(event) {
+            event.preventDefault();
+            const targetId =
+                link.getAttribute("href");
+            const target =
+                document.querySelector(targetId);
+            target.scrollIntoView({
+                behavior: "smooth"
+            });
+        });
+    });
+</script>
+</body>
+</html>
