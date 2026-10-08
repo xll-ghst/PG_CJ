@@ -1,122 +1,24 @@
-<!-- <!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Запись ребенка</title>
-    <link rel="stylesheet" href="ttt.css">
-</head>
-
-<body>
-
-<header>
-    <h1>Запись ребенка в школу / детский сад</h1>
-    <p>Заполните форму для подачи заявления</p>
-</header>
-
-<main>
-    <form>
-
-        <span class="badge">ЗАЯВЛЕНИЕ</span>
-
-        <h2>Данные ребенка</h2>
-
-        <label for="parent">Имя родителя:</label>
-        <input
-            type="text"
-            id="parent"
-            name="parent"
-            placeholder="Введите имя родителя"
-            required
-        >
-
-        <label for="child">ФИО ребенка:</label>
-        <input
-            type="text"
-            id="child"
-            name="child"
-            placeholder="Введите ФИО ребенка"
-            required
-        >
-
-        <label for="birth">Дата рождения ребенка:</label>
-        <input
-            type="date"
-            id="birth"
-            name="birth"
-            required
-        >
-
-        <label for="group">Класс / группа:</label>
-        <select id="group" name="group" required>
-            <option value="">Выберите класс или группу</option>
-            <option>1 класс</option>
-            <option>2 класс</option>
-            <option>3 класс</option>
-            <option>4 класс</option>
-            <option>5 класс</option>
-            <option>Подготовительная группа</option>
-            <option>Старшая группа</option>
-            <option>Средняя группа</option>
-        </select>
-
-        <label for="document">Файл свидетельства о рождении:</label>
-        <input
-            type="file"
-            id="document"
-            name="document"
-            accept=".pdf,.jpg,.jpeg,.png"
-            required
-        >
-
-        <button type="submit" href="">Подать заявление</button>
-
-    </form>
-</main>
-
-<footer>
-    <p>© 2026 Запись ребенка</p>
-</footer>
-
-</body>
-</html> -->
-
 
 <!DOCTYPE html>
-
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-```
 <title>Запись ребенка</title>
-
 <style>
-    /* =========================
-       ОСНОВНЫЕ СТИЛИ
-    ========================= */
-
     * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
     }
-
     html {
         scroll-behavior: smooth;
     }
-
     body {
         font-family: Arial, sans-serif;
         background: #f3f7ff;
         color: #333;
     }
-
-    /* =========================
-       НАВИГАЦИЯ
-    ========================= */
-
     nav {
         background: #2563eb;
         padding: 15px 8%;
@@ -128,34 +30,25 @@
         z-index: 1000;
         box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
     }
-
     .logo {
         color: white;
         font-size: 22px;
         font-weight: bold;
     }
-
     nav ul {
         display: flex;
         list-style: none;
         gap: 25px;
     }
-
     nav a {
         color: white;
         text-decoration: none;
         font-weight: bold;
         transition: 0.3s;
     }
-
     nav a:hover {
         color: #bfdbfe;
     }
-
-    /* =========================
-       HEADER
-    ========================= */
-
     header {
         text-align: center;
         color: white;
@@ -166,58 +59,51 @@
             #60a5fa
         );
     }
-
     header h1 {
         font-size: 42px;
         margin-bottom: 15px;
     }
-
     header p {
         font-size: 20px;
     }
-
     .header-btn {
         display: inline-block;
         margin-top: 30px;
         padding: 14px 30px;
-        background: white;
-        color: #2563eb;
+        background: rgb(187, 16, 16);
+        color: #b81818;
         border-radius: 10px;
         text-decoration: none;
         font-weight: bold;
         transition: 0.3s;
+        margin-top: 30px;
+        text-decoration: none;
+        padding: 15px 35px;
+        border: none;
+        border-radius: 10px;
+        background: #f2ffff;
+        color: rgb(38, 125, 255);
+        cursor: pointer;
+        transition: 0.15s;
     }
-
     .header-btn:hover {
         transform: translateY(-3px);
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     }
-
-    /* =========================
-       СЕКЦИИ
-    ========================= */
-
     section {
         max-width: 1100px;
         margin: auto;
         padding: 70px 20px;
     }
-
     section h2 {
         text-align: center;
         color: #1e40af;
         font-size: 32px;
         margin-bottom: 25px;
     }
-
-    /* =========================
-       О НАС
-    ========================= */
-
     .about {
         text-align: center;
     }
-
     .about-text {
         max-width: 800px;
         margin: auto;
@@ -225,51 +111,36 @@
         line-height: 1.7;
         color: #555;
     }
-
-    /* =========================
-       КАРТОЧКИ
-    ========================= */
-
     .cards {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 25px;
         margin-top: 40px;
     }
-
     .card {
-        background: white;
+        background: rgb(255, 255, 255);
         padding: 30px 20px;
         border-radius: 15px;
         text-align: center;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        box-shadow: 0 5px 20px rgba(196, 26, 202, 0.74);
         transition: 0.3s;
     }
-
     .card:hover {
         transform: translateY(-7px);
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
     }
-
     .card-icon {
-        font-size: 45px;
-        margin-bottom: 15px;
+        font-size: 20px;
+        margin-bottom: px;
     }
-
     .card h3 {
         color: #2563eb;
         margin-bottom: 10px;
     }
-
     .card p {
         color: #666;
         line-height: 1.5;
     }
-
-    /* =========================
-       ФОРМА
-    ========================= */
-
     #application {
         max-width: none;
         background: #eaf2ff;
@@ -330,7 +201,7 @@
         padding: 14px;
         border: none;
         border-radius: 9px;
-        background: #2563eb;
+        background: #782bf5;
         color: white;
         font-size: 17px;
         font-weight: bold;
